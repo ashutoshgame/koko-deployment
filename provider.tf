@@ -40,7 +40,7 @@ resource "aws_security_group" "http_access" {
 
 resource "aws_instance" "kubernetes_instance" {
   ami             = "ami-08e5424edfe926b43"
-  instance_type   = "t3.xlarge"
+  instance_type   = "t3.large"
   key_name        = "koko"
   security_groups = ["http_access"]
 

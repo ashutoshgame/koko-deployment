@@ -41,7 +41,7 @@ resource "aws_security_group" "http_access" {
 resource "aws_instance" "kubernetes_instance" {
   ami             = "ami-0f5ee92e2d63afc18"
   instance_type   = "t3.xlarge"
-  key_name        = "kube8"
+  key_name        = "koko"
   security_groups = ["http_access"]
 
   tags = {
@@ -72,7 +72,7 @@ resource "aws_instance" "kubernetes_instance" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("./kube8.pem")
+    private_key = file("./koko.pem")
     timeout     = "4m"
   }
 }

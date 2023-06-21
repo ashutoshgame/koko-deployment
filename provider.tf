@@ -69,7 +69,7 @@ resource "aws_instance" "kubernetes_instance" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("./<koko>")
+    private_key = file("./koko.pem")
     timeout     = "4m"
   }
 }

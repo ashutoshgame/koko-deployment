@@ -1,7 +1,7 @@
 provider "aws" {
 
-  access_key = "<<AWS_ACCESS_KEY>>"
-  secret_key = "<<AWS_SECRET_KEY>>"
+  access_key = "AKIAQMCUO6O2DNJ3JNJI"
+  secret_key = "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"
   region     = "ap-south-1"
 }
 
@@ -39,9 +39,9 @@ resource "aws_security_group" "http_access" {
 ################ EC2 Instance ##########################
 
 resource "aws_instance" "kubernetes_instance" {
-  ami             = "ami-08e5424edfe926b43"
-  instance_type   = "t3.large"
-  key_name        = "koko"
+  ami             = "ami-0f5ee92e2d63afc18"
+  instance_type   = "t3.xlarge"
+  key_name        = "kube8"
   security_groups = ["http_access"]
 
   tags = {
@@ -72,7 +72,7 @@ resource "aws_instance" "kubernetes_instance" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ubuntu"
-    private_key = file("./koko.pem")
+    private_key = file("./kube8.pem")
     timeout     = "4m"
   }
 }

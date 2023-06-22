@@ -24,7 +24,7 @@ sudo usermod -a -G docker  $USER
 sudo chmod 666 /var/run/docker.sock
 yes '' | sudo apt-get install kubeadm kubelet kubectl
 sudo chmod 666 /var/run/docker.sock
-aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 025946944436.dkr.ecr.ap-south-1.amazonaws.com/koko
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 591675278479.dkr.ecr.ap-south-1.amazonaws.com/koko
 docker container ls
-docker run -it -p 5000:5000 -d 025946944436.dkr.ecr.ap-south-1.amazonaws.com/koko:latest
+docker run -it -p 5000:5000 -d 591675278479.dkr.ecr.ap-south-1.amazonaws.com/koko:latest
 docker container ls
